@@ -157,7 +157,8 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 */
 function lowerCaseStrings(strings) {
   const items_lower = [];
-  strings.forEach(strings => items_lower.push().toLowerCase())
+  strings.forEach(strings => items_lower.push(strings.toLowerCase()));
+  return items_lower
 }
 
 /**
@@ -178,7 +179,6 @@ function lowerCaseStrings(strings) {
 function isItAnApple(strings) {
   const is_apple = strings.map( (arrItem) => {
     if (arrItem === 'apple') {
-      is_apple.push(arrItem);
       return true
     } else {
       return false
@@ -226,12 +226,12 @@ function removeApple(strings) {
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
 function stringSmash(strings) {
-  const together = strings.reduce( (arrItem) => {
-    return arrItem
-  } 
+  const together = strings.reduce( (arrItem, total) => {
+    return arrItem += total
   })
   return together
 }
+    // return string - all items pushed together
 
 // A local community center is holding a fund raising 5k fun run and has invited
 // 50 small businesses to make a small donation on their behalf for some much needed
